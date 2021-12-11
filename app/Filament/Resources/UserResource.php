@@ -3,17 +3,10 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
-use Filament\Forms;
-use Filament\Forms\Components\Builder;
-use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
 
 class UserResource extends Resource
 {
@@ -25,7 +18,7 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->required()
+                //
             ]);
     }
 
@@ -33,8 +26,6 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
-                TextColumn::make('email'),
                 // ...
             ])
             ->filters([
