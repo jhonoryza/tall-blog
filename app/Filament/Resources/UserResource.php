@@ -7,6 +7,7 @@ use App\Models\User;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
+use Filament\Tables\Columns\TextColumn;
 
 class UserResource extends Resource
 {
@@ -26,7 +27,8 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                // ...
+                TextColumn::make('name'),
+                TextColumn::make('email'),
             ])
             ->filters([
                 // Filter::make('verified')

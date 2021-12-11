@@ -19,7 +19,8 @@ class CreateUser extends CreateRecord
                 ->schema([
                     TextInput::make('name')->required(),
                     TextInput::make('email')->required()->email()->unique(),
-                    TextInput::make('password')->required()->password()
+                    TextInput::make('password')->required()->password()->same('passwordConfirmation'),
+                    TextInput::make('passwordConfirmation')->required()->password()
                 ])
                 ->statePath('data'),
         ];
