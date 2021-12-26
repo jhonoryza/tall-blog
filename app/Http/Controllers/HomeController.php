@@ -20,9 +20,9 @@ class HomeController extends Controller
     public function show(Post $post): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         // get previous post
-        $previous = Post::where('id', '<', $post->id)->max('id');
+        $previous = $this->baseQuery()->where('id', '<', $post->id)->first();
         // get next post
-        $next = Post::where('id', '>', $post->id)->min('id');
+        $next = $this->baseQuery()->where('id', '>', $post->id)->first();
         return view('posts.show', compact('post', 'previous', 'next'));
     }
 }
