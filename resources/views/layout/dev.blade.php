@@ -17,6 +17,13 @@
         <!-- Theme CSS -->  
         <link id="theme-style" rel="stylesheet" href="{{ asset('assets/css/theme-8.css') }}">
 
+        <style>[x-cloak] { display: none !important; }</style>
+        @livewireStyles
+
+        <!-- Scripts -->
+        @livewireScripts
+        <script src="{{ mix('js/app.js') }}" defer></script>
+        @stack('scripts')
     </head> 
 
     <body>
