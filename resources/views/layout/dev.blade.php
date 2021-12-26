@@ -23,7 +23,7 @@
         @include('partials.dev.author')
         <div class="main-wrapper">
             @yield('content')
-            @include('partials.dev.subscribe-me')
+            {{-- @include('partials.dev.subscribe-me') --}}
             @include('partials.dev.footer')
         </div><!--//main-wrapper-->
         
