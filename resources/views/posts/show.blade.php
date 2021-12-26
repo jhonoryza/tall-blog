@@ -5,7 +5,7 @@
     <div class="container single-col-max-width">
         <header class="blog-post-header">
             <h2 class="title mb-2">{{ $post->title }}</h2>
-            <div class="meta mb-3"><span class="date">Published {{ $post->getPublishedForHuman() }}</span><span class="time">5 min read</span><span class="comment"><a  class="text-link" href="#">4 comments</a></span></div>
+            <div class="meta mb-3"><span class="date">Published {{ $post->getPublishedForHuman() }}</span><span class="time">{{ $post->read_time }} read</span><span class="comment"><a  class="text-link" href="#">4 comments</a></span></div>
         </header>
         
         <div class="blog-post-body">

@@ -59,6 +59,10 @@
             "php artisan view:clear",
             "php artisan route:clear",
             "composer dump-autoload"
+        ],
+        "refresh": [
+            "php artisan migrate:fresh --seed",
+            "php artisan filament:user"
         ]
     },
     "extra": {

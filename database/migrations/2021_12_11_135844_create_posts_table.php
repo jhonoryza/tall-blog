@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('slug')->nullable();
             $table->string('desc', 600)->nullable();
             $table->text('body')->nullable();
+            $table->string('read_time')->nullable();
             $table->dateTime('published_at')->nullable();
             $table->timestamps();
         });

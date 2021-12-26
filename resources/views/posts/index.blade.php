@@ -6,7 +6,7 @@
             </div>
             <div class="col">
                 <h3 class="title mb-1"><a class="text-link" href="{{ route('posts.show', $post->getRouteKey()) }}">{{ $post->title }}</a></h3>
-                <div class="meta mb-1"><span class="date">Published {{ $post->getPublishedForHuman() }}</span><span class="time">5 min read</span><span class="comment"><a class="text-link" href="#">8 comments</a></span></div>
+                <div class="meta mb-1"><span class="date">Published {{ $post->getPublishedForHuman() }}</span><span class="time">{{ $post->read_time }} read</span><span class="comment"><a class="text-link" href="#">8 comments</a></span></div>
                 <div class="intro">{{ $post->desc }}</div>
                 <a class="text-link" href="{{ route('posts.show', $post->getRouteKey()) }}">Read more &rarr;</a>
             </div><!--//col-->

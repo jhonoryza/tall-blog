@@ -29,6 +29,28 @@ class Post extends Model
         'published_at'
     ];
 
+    protected static function booted()
+    {
+        parent::booted();
+        static::created(function ($post) {
+            if ($post->read_time == null) {
+                $post->update([
+                    'read_time' => Post::getReadTime($post->body)
+                ]);
+            }
+        });
+    }
+
+    protected static function getReadTime($html)
+    {
+        $html = strip_tags($html);
+        $word = html_entity_decode($html);
+        $word = preg_replace('/[\r\n]+/', '', $word);
+        $readTime = (int) (str_word_count($word) / 200); //@phpstan-ignore-line
+
+        return $readTime == 0 ? '1 min' : $readTime . ' min';
+    }
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
